@@ -3,7 +3,7 @@ import ItemToDo from "./ItemToDo";
 
 const TodoList = (props) => {
   const itemList = props.items.map((item) => (
-    <ItemToDo key={item.id} text={item.itemText} />
+    <ItemToDo key={item.id} text={item.itemText} delete={props.delete} />
   ));
 
   return (

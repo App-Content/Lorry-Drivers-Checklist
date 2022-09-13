@@ -108,6 +108,15 @@ class App extends Component {
     ],
   };
 
+  deleteItem = (id) => {
+    const items = [...this.state.items];
+    const itemIndex = items.findIndex((item) => item.id === id);
+    items.splice(itemIndex, 1);
+    this.setState({
+      items,
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -115,7 +124,7 @@ class App extends Component {
           <Header />
           <SwitchModeButton />
           <SeeMore />
-          <ToDoList items={this.state.items} />
+          <ToDoList items={this.state.items} delete={this.deleteItem} />
           <AddTask />
         </div>
       </div>

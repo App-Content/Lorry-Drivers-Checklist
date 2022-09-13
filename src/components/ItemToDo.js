@@ -5,7 +5,7 @@ const ItemToDo = (props) => {
     <tr>
       <td>{props.text}</td>
       <td>
-        <button>X</button>
+        <button onClick={() => props.delete(props.id)}>X</button>
       </td>
       <td>
         <input type="checkbox" />
