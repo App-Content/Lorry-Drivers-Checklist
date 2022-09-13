@@ -1,0 +1,22 @@
+@use "./fonts" as f;
+
+.switchModeButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: f.$small;
+    position: absolute;
+    right: 30px;
+    border: none;
+    box-shadow: 0 0 10px black;
+}
+
+.switchModeButton__dark {
+    background-color: black;
+    color: white;
+}
+
+.switchModeButton__light {
+    background-color: white;
+    color: black;
+}

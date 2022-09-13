@@ -1,0 +1,19 @@
+@use "./fonts" as f;
+
+.header {
+    padding: 20px 0;
+}
+
+.header__title {
+    font-size: f.$header;
+    font-weight: 900;
+    color: rgba(15, 15, 54, 0.82);
+}
+
+@media (max-width: 768px) {
+    .header__title {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+}
