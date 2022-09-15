@@ -1,0 +1,52 @@
+@use "./fonts" as f;
+
+.addOwnButton {
+    display: block;
+    margin: auto;
+    padding: 20px;
+    font-weight: 900;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(192, 94, 24);
+    color: white;
+}
+
+.form {
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+.form__input,
+.form__button {
+    height: 100%;
+
+}
+
+.form__input {
+    width: 400px;
+}
+
+.form__button {
+    width: 100px;
+    border: none;
+    background-color: rgb(192, 94, 24);
+    color: white;
+}
+
+.formClosingButton {
+    margin: 30px auto;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: none;
+    background-color: red;
+    font-size: f.$small;
+    font-weight: 900;
+    color: white;
+}
+
+
+.formFooter {
+    height: 100px;
+}
