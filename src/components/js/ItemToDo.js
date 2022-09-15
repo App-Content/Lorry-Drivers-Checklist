@@ -8,7 +8,11 @@ const ItemToDo = (props) => {
         <button onClick={() => props.delete(props.item.id)}>X</button>
       </td>
       <td>
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          checked={props.item.done}
+          onChange={() => props.changeItemStatus(props.item.id)}
+        />
       </td>
     </tr>
   );

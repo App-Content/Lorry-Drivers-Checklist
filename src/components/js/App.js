@@ -101,13 +101,29 @@ class App extends Component {
     });
   };
 
+  changeItemStatus = (id) => {
+    const items = [...this.state.items];
+    items.forEach((item) => {
+      if (item.id === id) {
+        item.done = !item.done;
+      }
+    });
+    this.setState({
+      items,
+    });
+  };
+
   render() {
     return (
       <div className="App container">
         <Header />
         <SwitchModeButton />
         <SeeMore />
-        <ToDoList items={this.state.items} delete={this.deleteItem} />
+        <ToDoList
+          items={this.state.items}
+          delete={this.deleteItem}
+          changeItemStatus={this.changeItemStatus}
+        />
         <AddTask addItem={this.addItem} />
       </div>
     );

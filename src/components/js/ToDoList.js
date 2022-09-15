@@ -8,6 +8,7 @@ const TodoList = (props) => {
       item={item}
       text={item.itemText}
       delete={props.delete}
+      changeItemStatus={props.changeItemStatus}
     />
   ));
 
