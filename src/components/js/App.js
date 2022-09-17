@@ -5,7 +5,6 @@ import Header from "./Header";
 import SwitchModeButton from "./SwitchModeButton";
 import SeeMore from "./SeeMore";
 import ToDoList from "./ToDoList";
-import AddTask from "./AddTask";
 
 class App extends Component {
   state = {
@@ -91,6 +90,7 @@ class App extends Component {
         done: false,
       },
     ],
+    newItemText: "",
   };
 
   deleteItem = (id) => {
@@ -113,6 +113,45 @@ class App extends Component {
     });
   };
 
+  toggleForm = (addOwnButton, form, formClosingButton) => {
+    addOwnButton = document.querySelector(".addOwnButton");
+    form = document.querySelector(".form");
+    formClosingButton = document.querySelector(".formClosingButton");
+
+    function launchToggle() {
+      if (addOwnButton.style.display === "none") {
+        addOwnButton.style.display = "block";
+        form.style.display = "none";
+      } else {
+        addOwnButton.style.display = "none";
+        form.style.display = "block";
+      }
+    }
+    return launchToggle();
+  };
+
+  handleText = (event) => {
+    this.setState({
+      newItemText: event.target.value,
+    });
+  };
+
+  addItem = (event) => {
+    event.preventDefault();
+    const items = [...this.state.items];
+    let itemsLength = items.length;
+    const newItem = {
+      id: itemsLength + 1,
+      itemText: this.state.newItemText,
+      done: false,
+    };
+
+    this.setState({
+      items: [...items, newItem],
+      newItemText: "",
+    });
+  };
+
   render() {
     return (
       <div className="App container">
@@ -124,7 +163,33 @@ class App extends Component {
           delete={this.deleteItem}
           changeItemStatus={this.changeItemStatus}
         />
-        <AddTask addItem={this.addItem} />
+        <div className="AddTask">
+          <div>
+            <button className="addOwnButton" onClick={this.toggleForm}>
+              Dodaj własne
+            </button>
+          </div>
+          <form className="form">
+            <input
+              type="text"
+              className="form__input"
+              value={this.state.newItemText}
+              onChange={this.handleText}
+            />
+            <button className="form__button" onClick={this.addItem}>
+              Dodaj
+            </button>
+            <div>
+              <button
+                type="button"
+                className="formClosingButton"
+                onClick={this.toggleForm}
+              >
+                Zamknij
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
