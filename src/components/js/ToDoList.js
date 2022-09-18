@@ -2,7 +2,9 @@ import React from "react";
 import ItemToDo from "./ItemToDo";
 
 const TodoList = (props) => {
-  const itemList = props.items.map((item) => (
+  const active = props.items.filter((item) => !item.done);
+
+  const itemsTodo = active.map((item) => (
     <ItemToDo
       key={item.id}
       item={item}
@@ -15,7 +17,7 @@ const TodoList = (props) => {
   return (
     <div className="todoList">
       <h3 className="todoList__header">
-        Sprawdź <span>({props.items.length})</span>
+        Sprawdź <span>({active.length})</span>
       </h3>
       <table className="table table-striped mt-4">
         <thead className="table__header">
@@ -25,7 +27,7 @@ const TodoList = (props) => {
             <th className="table__header--item">Ukończone</th>
           </tr>
         </thead>
-        <tbody>{itemList}</tbody>
+        <tbody>{active.length > 0 ? itemsTodo : "Wszystko sprawdzone!"}</tbody>
       </table>
     </div>
   );
