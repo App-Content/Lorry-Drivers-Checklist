@@ -20,10 +20,14 @@ const SeeMore = () => {
         {seeMoreLess[0]}
       </h4>
       <div className="seeMore__text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus
-        provident, architecto repudiandae quis labore voluptates asperiores
-        itaque nisi ab corrupti delectus molestiae adipisci natus a corporis
-        nobis, officiis ullam. Fuga.
+        Aplikacja pomaga kierowcy ciężarowki (powyżej 3,5t dmc) sprawdzić to, co
+        niezbędne przed wyjazdem w krajową lub międzynarodową trasę z ładunkiem.
+        Lista startowa to podstawowy (uniwersalny) zestaw punktów, ktory może
+        być uzupełniony ręcznie, wg indywidualnych potrzeb (np. w przypadku
+        trasnportów specjalistycznych). Pozycje z listy można usuwać, jeśli nie
+        są ważne w konkretnym przypadku. Sprawdzone punkty - po ozdnaczeniu jako
+        ukończone - trafiają na listę "Sprawdzone". Można je przywrócić na listę
+        główną i sprawdzić jeszcze raz.
       </div>
     </div>
   );

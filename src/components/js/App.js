@@ -37,7 +37,7 @@ class App extends Component {
       },
       {
         id: 6,
-        itemText: "Tachometr",
+        itemText: "Tachograf",
         done: false,
       },
       {
