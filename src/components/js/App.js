@@ -5,6 +5,7 @@ import Header from "./Header";
 import SwitchModeButton from "./SwitchModeButton";
 import SeeMore from "./SeeMore";
 import ToDoList from "./ToDoList";
+import DoneList from "./DoneList";
 
 class App extends Component {
   state = {
@@ -190,6 +191,10 @@ class App extends Component {
             </div>
           </form>
         </div>
+        <DoneList
+          items={this.state.items}
+          changeItemStatus={this.changeItemStatus}
+        />
       </div>
     );
   }
