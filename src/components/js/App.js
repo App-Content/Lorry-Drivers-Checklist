@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../scss/App.scss";
 
 import Header from "./Header";
-import SwitchModeButton from "./SwitchModeButton";
 import SeeMore from "./SeeMore";
 import ToDoList from "./ToDoList";
 import DoneList from "./DoneList";
@@ -157,7 +156,6 @@ class App extends Component {
     return (
       <div className="App container">
         <Header />
-        <SwitchModeButton />
         <SeeMore />
         <ToDoList
           items={this.state.items}
