@@ -25,7 +25,7 @@ const DoneList = (props) => {
             <th className="table__header--item">Ukończone</th>
           </tr>
         </thead>
-        <tbody>{itemsDone}</tbody>
+        <tbody data-test-id="doneItems">{itemsDone}</tbody>
       </table>
     </div>
   );

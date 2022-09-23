@@ -16,7 +16,11 @@ const SeeMore = () => {
   };
   return (
     <div className="seeMore">
-      <h4 className="seeMore__header" onClick={toggleSeeMoreText}>
+      <h4
+        className="seeMore__header"
+        data-test-id="seeMoreHeader"
+        onClick={toggleSeeMoreText}
+      >
         {seeMoreLess[0]}
       </h4>
       <div className="seeMore__text">

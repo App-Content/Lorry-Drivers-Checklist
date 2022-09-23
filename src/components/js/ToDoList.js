@@ -27,7 +27,9 @@ const TodoList = (props) => {
             <th className="table__header--item">Ukończone</th>
           </tr>
         </thead>
-        <tbody>{active.length > 0 ? itemsTodo : "Wszystko sprawdzone!"}</tbody>
+        <tbody data-test-id="toDoItems">
+          {active.length > 0 ? itemsTodo : "Wszystko sprawdzone!"}
+        </tbody>
       </table>
     </div>
   );
